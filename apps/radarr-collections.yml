@@ -20,7 +20,7 @@
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/config'
-          - '/opt/appdata/{{pgrole}}/logs:/logs'
+          - '/opt/appdata/{{pgrole}}/config/logs:/logs'
           - '/opt/appdata/{{pgrole}}/output:/output'
 
     - name: 'Setting {{pgrole}} ENV'
