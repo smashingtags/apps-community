@@ -16,13 +16,12 @@
         image: 'si0972/radarr-collections'
 
     # CORE (MANDATORY) ############################################################
-    - name: 'Including cron job'
-      include_tasks: '/opt/communityapps/apps/_core.yml'
-
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
           - '/opt/appdata/{{pgrole}}:/config'
+          - '/opt/appdata/{{pgrole}}/logs:/logs'
+          - '/opt/appdata/{{pgrole}}/output:/output'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
